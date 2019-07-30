@@ -2,53 +2,85 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+
+body{
+    background-color: rgb(105, 101, 101)
+}
+
+
 header {
-    background-color: #ddd;
-    height: 120px;
-    width: 100vw;
+    display: flex;
+    height: 180px;
+    width: 100%;
     margin-bottom: 30px;
+    background-image: url('../assets/bus.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 30%;
+    border: 5px solid rgb(122, 48, 48);
 }
 
 header h1 {
-    padding-top: 10px;
-    text-align: center;
-    font-size: 2.4em;
+    color: rgb(122, 48, 48);
+    padding-top: 20px;
+    padding-left: 10vw;
+    padding-bottom: 0;
+    text-align: left;
+    font-size: 3em;
 }
 
-header nav{
+header a{
+    margin-left: 40vw;
+    margin-right: 10px;
+    color: rgb(187, 9, 9);
     font-size: 1.3em;
     text-align: right;
-    margin-right: 60px;
+    font-weight: bolder;
+    padding-top: 70px;
     text-decoration: underline;
+
 }
 
 .container {
     display: flex;
-    width: 1200px;
+    width: 100vw;
     margin-right: auto;
     margin-left: auto;
 }
 
 button {
-    margin: 30px;
-    height: 395px;
+    border: 3px solid rgb(122, 48, 48);
+    background-color: gray;
+    margin: 3vw;
+    height: 50vh;
+    width: 25vw;
+}
+
+button:hover {
+    transition-duration: 350ms;
+    background-color: rgb(122, 48, 48);
+    border: 3px solid rgb(187, 9, 9);
+    cursor: pointer;
 }
 
 img {
-    border: 1px solid red;
-    height: 375px;
-    width: 300px;
+    height: 50vh;
+    width: 23vw;
     object-fit: contain;
 }
 
 h2 {
+    color: rgb(187, 9, 9);
     text-align: center;
     font-size: 2.1em
 }
 
 h3 {
+    color: rgb(243, 113, 113);
     text-align: center;
     font-size: 1.4em;
+    width: 100%;
+    margin-right: 5px;
 }
 
 .hidden {
