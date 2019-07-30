@@ -17,5 +17,7 @@ Nick regularly uses the bus on his commute to work. He spends about one hour on 
 ### Kelly, Head of Product Choices
 Kelly is in charge of looking at the data rendered from this experiment and making a decision on what products should go into the calendar. kelly is most interested in seeing what objects are chosen by the focus group, and if there are objects that are seen multiple times, but not chosen. She will use this data for product choices in the magazine.
 
+
+
 ### Mark, Product Layout Planner
 Mark is in charge of looking through the data to make choices as to how the objects should be laid out in the magazine. He will take the information given to him by Kelly as well as looking at the frequency of clicks versus number of times shown to place popular images in auspicious locations and group less popular items around the more popular ones.
