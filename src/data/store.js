@@ -44,7 +44,7 @@ const store = {
         let shownTally = store.getShownTally();
         const product = store.findProduct(shownTally, id);
         if(product) {
-            shownTally++
+            product.shownTally = +product.shownTally + 1;
         }
         else {
                 const newShownTally = {
@@ -66,16 +66,18 @@ const store = {
         let chosenTally = store.getChosenTally();
         const product = store.findProduct(chosenTally, id);
         if(product) {
-            chosenTally++
+            console.log(product.chosenTally);
+            product.chosenTally = +product.chosenTally + 1;
+            console.log(product.chosenTally);
         }
         else {
                 const newChosenTally = {
                     id: id,
                     chosenTally: 1
                 }
-                chosenTally.push(newChosenTally);
-            store.save('chosen-tally', chosenTally);
+            chosenTally.push(newChosenTally);
         }
+        store.save('chosen-tally', chosenTally);
     },
 };
 

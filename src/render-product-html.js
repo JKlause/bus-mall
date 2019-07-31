@@ -1,3 +1,4 @@
+import store from "./data/store.js";
 
 export default function renderProductInHtml(product, i) {
     const button = document.createElement('button');
@@ -8,9 +9,10 @@ export default function renderProductInHtml(product, i) {
     img.src = product.image;
     button.appendChild(img);
 
-    // button.addEventListener('click', () => {
-    
-    // })
+    button.addEventListener('click', () => {
+        store.updateChosenTally(product.id);
+        return;
+    })
 
     return button;
 }

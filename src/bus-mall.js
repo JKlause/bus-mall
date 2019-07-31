@@ -12,44 +12,43 @@ const products = store.getProducts();
 const masterProductsSet = new ProductSet(products);
 
 //create iteration list of products
-let iterationProductsSet = masterProductsSet
-
-for(let i = 0; i < 3; i ++) {
-    console.log(iterationProductsSet)
-    const product = iterationProductsSet.getRandomProduct();
-    iterationProductsSet.removeProductById(product.id);
-    const dom = renderProductInHtml(product, i);
-    productRenderSection.appendChild(dom);
-    store.updateShownTally(product.id);
+let turns = 1
+if(turns <= 25) {
+productChoiceRound();
 }
 
 
-const product1 = iterationProductsSet.getRandomProduct();
-iterationProductsSet.removeProductById(product1.id);
-// productShownTally = {
-//     code: product1.code,
-//     shownTally: 1
-// }
-
-
-const product2 = iterationProductsSet.getRandomProduct();
-iterationProductsSet.removeProductById(product2.id);
-
-
-const product3 = iterationProductsSet.getRandomProduct();
-iterationProductsSet.removeProductById(product3.id);
-
-
-
-
-//     update product shown tally
-//         push to local storage
-// update turn tracker
-let turns = 0
-turns++
-if(turns >1) {
-
+function productChoiceRound() {
+    let lastThreeProductsRendered = store.get('last-three-items');
+    let iterationProductsSet = masterProductsSet;
+    if (!lastThreeProductsRendered) {
+        lastThreeProductsRendered = [];
+    }
+    else {
+        for (let i = 0; i < lastThreeProductsRendered.length; i++) {
+            previousProductRendered = lastThreeProductsRendered[i];
+            iterationProductsSet.removeProductById(previousProductRendered.id);
+        }
+        lastThreeProductsRendered = [];
+    }
+    for (let i = 0; i < 3; i++) {
+        const product = iterationProductsSet.getRandomProduct();
+        iterationProductsSet.removeProductById(product.id);
+        const dom = renderProductInHtml(product, i);
+        productRenderSection.appendChild(dom);
+        store.updateShownTally(product.id);
+        lastThreeProductsRendered.push(product);
+    }
+    store.save('last-three-items', lastThreeProductsRendered);
+    turns++;
 }
+//saving three products in local storage
+//each time compare iteration list with three products
+//splice out three products
+//clear products in local storage
+//run function
+
+
 //     remove 3 products from next turn list
 //         if not first turn, return previous items into next turn list
 
