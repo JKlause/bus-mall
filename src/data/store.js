@@ -19,6 +19,11 @@ const store = {
         }
         return products;
     }
+    // getProductShownTally(code) {
+    //     //if product exists in shown tally
+    //         //add 1 to 
+
+    // }
 };
 
 export default store;

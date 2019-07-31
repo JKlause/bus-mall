@@ -11,7 +11,7 @@ QUnit.testStart(() => {
     store.storage.clear();
 });
 
-test('basic get and save', (assert) =>{
+test('basic get and save', (assert) => {
     //arrange
     const key = 'dog';
     const dog = { name: 'max' };
@@ -33,3 +33,9 @@ test('get trees uses bootstrapped trees', (assert) => {
     //assert
     assert.deepEqual(products, productsData);
 })
+
+// test('get product shown tally, return [] if empty', (assert) => {
+
+
+
+// })

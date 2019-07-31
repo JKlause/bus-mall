@@ -18,6 +18,10 @@ let iterationProductsSet = masterProductsSet
 
 const product1 = iterationProductsSet.getRandomProduct();
 iterationProductsSet.removeProductById(product1.id);
+// productShownTally = {
+//     code: product1.code,
+//     shownTally: 1
+// }
 
 
 const product2 = iterationProductsSet.getRandomProduct();
@@ -34,6 +38,7 @@ iterationProductsSet.removeProductById(product3.id);
 //         push to local storage
 //     remove 3 products from next turn list
 //         if not first turn, return previous items into next turn list
+
 // render 3 products on screen (doesn't need to be random)
 //     create event listeners
 //     set button value equal to name of product
