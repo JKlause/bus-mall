@@ -16,6 +16,7 @@ let iterationProductsSet = masterProductsSet
     //remove product from set, splice from new set, update product shown tally
     //repeat 3 times
 
+
 const product1 = iterationProductsSet.getRandomProduct();
 iterationProductsSet.removeProductById(product1.id);
 // productShownTally = {
@@ -36,6 +37,12 @@ iterationProductsSet.removeProductById(product3.id);
 
 //     update product shown tally
 //         push to local storage
+// update turn tracker
+let turns = 0
+turns++
+if(turns >1) {
+
+}
 //     remove 3 products from next turn list
 //         if not first turn, return previous items into next turn list
 

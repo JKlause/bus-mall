@@ -19,6 +19,11 @@ const store = {
         }
         return products;
     }
+    // getShownTally()
+    //     let shownTally = store.get('shown-tally')
+    //     if(!shownTally) {
+    //         sto
+    //     }
     // getProductShownTally(code) {
     //     //if product exists in shown tally
     //         //add 1 to 
