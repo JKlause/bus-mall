@@ -1,6 +1,9 @@
 // create array with list of objects
 import ProductSet from './product-set.js';
 import store from './data/store.js';
+import renderProductInHtml from './render-product-html.js';
+
+const productRenderSection = document.getElementById('product-render-section');
 
 //    bootstrap master list into local storage
 const products = store.getProducts();
@@ -11,10 +14,14 @@ const masterProductsSet = new ProductSet(products);
 //create iteration list of products
 let iterationProductsSet = masterProductsSet
 
-// choose 3 products at random
-    //choose one product
-    //remove product from set, splice from new set, update product shown tally
-    //repeat 3 times
+for(let i = 0; i < 3; i ++) {
+    console.log(iterationProductsSet)
+    const product = iterationProductsSet.getRandomProduct();
+    iterationProductsSet.removeProductById(product.id);
+    const dom = renderProductInHtml(product, i);
+    productRenderSection.appendChild(dom);
+    store.updateShownTally(product.id);
+}
 
 
 const product1 = iterationProductsSet.getRandomProduct();

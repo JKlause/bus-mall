@@ -34,8 +34,48 @@ test('get trees uses bootstrapped trees', (assert) => {
     assert.deepEqual(products, productsData);
 })
 
-// test('get product shown tally, return [] if empty', (assert) => {
+test('get product shown tally, return [] if empty', (assert) => {
+    //arrange
+    const expected = [];
+
+    //act
+    const shownTally = store.getShownTally();
+
+    //assert
+    assert.deepEqual(expected, shownTally);
+})
+
+test('find product', (assert) => {
+    //arrange
+    const id = 'bag';
+    const expected = {
+                id: 'bag',
+                name: 'Star Wars Suitcase',
+                image: './assets/products/bag.jpg',
+            };
+    //imported productsData
+
+    //act
+    const product = store.findProduct(productsData, id);
+
+    //assert
+    assert.deepEqual(expected, product);
+})
 
 
+test('update shown tally', (assert) => {
+    //arrange
+    const expected = [{ id: 'bag', shownTally: 1 }];
+    const product = {
+        id: 'bag',
+        name: 'Star Wars Suitcase',
+        image: './assets/products/bag.jpg',
+    };
 
-// })
+    //act
+    store.updateShownTally(product.id);
+    const shownTally = store.getShownTally();
+
+    //assert
+    assert.deepEqual(expected, shownTally);
+})

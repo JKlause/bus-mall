@@ -18,17 +18,65 @@ const store = {
             products = productsData;
         }
         return products;
-    }
-    // getShownTally()
-    //     let shownTally = store.get('shown-tally')
-    //     if(!shownTally) {
-    //         sto
-    //     }
-    // getProductShownTally(code) {
-    //     //if product exists in shown tally
-    //         //add 1 to 
-
-    // }
+    },
+    findProduct(products, id) {
+        for(let i = 0; i < products.length; i++) {
+            const product = products[i];
+            if(product.id === id) {
+                return product;
+            } 
+        }
+        return null;
+    },
+    getProductById(id) {
+        const products = store.get('products');
+        const product = store.findProduct(products, id);
+        return product;
+    },
+    getShownTally() {
+        let shownTally = store.get('shown-tally')
+        if(!shownTally) {
+            shownTally = [];
+        }
+        return shownTally;
+    },
+    updateShownTally(id) {
+        let shownTally = store.getShownTally();
+        const product = store.findProduct(shownTally, id);
+        if(product) {
+            shownTally++
+        }
+        else {
+                const newShownTally = {
+                    id: id,
+                    shownTally: 1
+                }
+                shownTally.push(newShownTally);
+            store.save('shown-tally', shownTally);
+        }
+    },
+    getChosenTally() {
+        let chosenTally = store.get('chosen-tally')
+        if(!chosenTally) {
+            chosenTally = [];
+        }
+        return chosenTally;
+    },
+    updateChosenTally(id) {
+        let chosenTally = store.getChosenTally();
+        const product = store.findProduct(chosenTally, id);
+        if(product) {
+            chosenTally++
+        }
+        else {
+                const newChosenTally = {
+                    id: id,
+                    chosenTally: 1
+                }
+                chosenTally.push(newChosenTally);
+            store.save('chosen-tally', chosenTally);
+        }
+    },
 };
 
 export default store;
