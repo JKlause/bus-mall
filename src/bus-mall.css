@@ -46,27 +46,57 @@ header a{
     width: 100vw;
     margin-right: auto;
     margin-left: auto;
+    justify-content: center;
 }
 
 button {
     border: 3px solid rgb(122, 48, 48);
-    background-color: gray;
+    background-color: rgb(243, 113, 113);
+    color: rgb(122, 48, 48);
+    font-size: 1.3em;
     margin: 3vw;
-    height: 50vh;
-    width: 25vw;
+    height: 5vh;
+    width: 10vw;
 }
 
 button:hover {
     transition-duration: 350ms;
-    background-color: rgb(122, 48, 48);
+    background-color: rgb(253, 0, 0);
     border: 3px solid rgb(187, 9, 9);
     cursor: pointer;
 }
 
 img {
-    height: 45vh;
-    width: 20vw;
     object-fit: contain;
+}
+
+.product img {
+    border: 3px solid rgb(122, 48, 48);
+    background-color: rgb(243, 113, 113);
+    margin: 0vw 3vw;
+    height: 50vh;
+    width: 25vw;
+    object-fit: contain;
+}
+
+.product-title {
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: bolder;
+    color:  rgb(243, 113, 113);
+}
+
+.description {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: rgb(243, 113, 113);
+    border: 2px solid rgb(122, 48, 48);
+    margin: 0 3vw;
+}
+
+
+input {
+    display: none;
 }
 
 h2 {
@@ -76,11 +106,12 @@ h2 {
 }
 
 h3 {
-    color: rgb(243, 113, 113);
+    color:  rgb(253, 0, 0);
     text-align: center;
-    font-size: 1.4em;
+    font-size: 1.6em;
     width: 100%;
     margin-right: 5px;
+    text-decoration: underline;
 }
 
 .hidden {

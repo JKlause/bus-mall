@@ -66,9 +66,7 @@ const store = {
         let chosenTally = store.getChosenTally();
         const product = store.findProduct(chosenTally, id);
         if(product) {
-            console.log(product.chosenTally);
             product.chosenTally = +product.chosenTally + 1;
-            console.log(product.chosenTally);
         }
         else {
                 const newChosenTally = {

@@ -26,7 +26,7 @@ function productChoiceRound() {
     }
     else {
         for (let i = 0; i < lastThreeProductsRendered.length; i++) {
-            previousProductRendered = lastThreeProductsRendered[i];
+            const previousProductRendered = lastThreeProductsRendered[i];
             iterationProductsSet.removeProductById(previousProductRendered.id);
         }
         lastThreeProductsRendered = [];
@@ -35,13 +35,17 @@ function productChoiceRound() {
         const product = iterationProductsSet.getRandomProduct();
         iterationProductsSet.removeProductById(product.id);
         const dom = renderProductInHtml(product, i);
-        productRenderSection.appendChild(dom);
+        // productRenderSection.appendChild(dom);
         store.updateShownTally(product.id);
         lastThreeProductsRendered.push(product);
     }
     store.save('last-three-items', lastThreeProductsRendered);
     turns++;
 }
+
+
+//make button
+
 //saving three products in local storage
 //each time compare iteration list with three products
 //splice out three products
