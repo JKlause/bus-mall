@@ -98,4 +98,46 @@ function afterSurveyResults() {
         const dom = renderResultsTable(allProducts[i]);
         resultsTableBody.appendChild(dom);
     }
+
+    const resultsCtx = document.getElementById('results-chart').getContext('2d');
+
+    const productLabels = [];
+    const shownData = [];
+    const chosenData = [];
+
+    for(let i = 0; i < allProducts.length; i++) {
+        const product = allProducts[i];
+        productLabels.push(product.name);
+        shownData.push(product.shownTally);
+        chosenData.push(product.chosenTally);
+    }
+    
+// eslint-disable-next-line no-unused-vars
+    const resultsChart = new Chart(resultsCtx, {
+        type: 'bar',
+        data: {
+            labels: productLabels,
+            datasets: [
+                {
+                    label: 'Times Product Was Shown',
+                    data: shownData,
+                    backgroundColor: 'red'
+                },
+                {
+                    label: 'Times Product was Chosen',
+                    data: chosenData,
+                    backgroundColor: 'blue'
+                }
+            ]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    });
 }

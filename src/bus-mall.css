@@ -181,8 +181,11 @@ tbody tr:nth-child(even) {
 }
 
 canvas {
-  width: 75%;
+  width: 75vw;
   height: 500px;
+  background-color: white;
 }
 
-
+#chart-div {
+    
+}
