@@ -32,74 +32,24 @@ const store = {
         }
         return null;
     },
-    updateShownTallyTwo(id) {
-        const product = store.findProduct()
-    },
-    getProductById(id) {
-        const products = store.get('products');
-        const product = store.findProduct(products, id);
+    findProductById(id) {
+        const products = store.getProducts();
+        const product = store.findProduct(products, id)
         return product;
     },
-    getShownTally() {
-        let shownTally = store.get('shown-tally')
-        if(!shownTally) {
-            shownTally = [];
-        }
-        return shownTally;
-    },
-    resetShownTally() {
-        let shownTally = store.getShownTally();
-        shownTally = [];
-        store.save('shown-tally', shownTally);
-    },
-    resetChosenTally() {
-        let chosenTally = store.get('chosen-tally');
-        chosenTally = [];
-        store.save('chosen-tally', chosenTally);
-    },
-    resetProducts() {
+    incrementShownTally(id) {
         let products = store.getProducts();
-        products = [];
+        let product = store.findProduct(products, id);
+        product.shownTally = +product.shownTally + 1;
         store.save('products', products);
     },
-    updateShownTally(id) {
-        let shownTally = store.getShownTally();
-        const product = store.findProduct(shownTally, id);
-        if(product) {
-            product.shownTally = +product.shownTally + 1;
-        }
-        else {
-            const newShownTally = {
-                id: id,
-                shownTally: 1
-            }
-            shownTally.push(newShownTally);
-        }
-        store.save('shown-tally', shownTally);
-    },
-  
-    getChosenTally() {
-        let chosenTally = store.get('chosen-tally')
-        if(!chosenTally) {
-            chosenTally = [];
-        }
-        return chosenTally;
-    },
-    updateChosenTally(id) {
-        let chosenTally = store.getChosenTally();
-        const product = store.findProduct(chosenTally, id);
-        if(product) {
-            product.chosenTally = +product.chosenTally + 1;
-        }
-        else {
-                const newChosenTally = {
-                    id: id,
-                    chosenTally: 1
-                }
-            chosenTally.push(newChosenTally);
-        }
-        store.save('chosen-tally', chosenTally);
+    incrementChosenTally(id) {
+        let products = store.getProducts();
+        let product = store.findProduct(products, id);
+        product.chosenTally = +product.chosenTally + 1;
+        store.save('products', products);
     },
 };
 
 export default store;
+

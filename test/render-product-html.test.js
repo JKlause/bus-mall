@@ -23,7 +23,7 @@ test('rendering product in html', assert => {
 
 test('rendering results table', assert => {
     // arrange
-    const expected = '<tr><td class="left-justification">Star Wars Suitcase</td><td>2</td><td>1</td><td>50%</td></tr>';
+    const expected = '<tr><td class="left-justification">Star Wars Suitcase</td><td>2</td><td>1</td><td>50.0%</td></tr>';
     const product = {
         id: 'bag',
         name: 'Star Wars Suitcase',

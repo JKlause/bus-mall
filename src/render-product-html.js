@@ -46,7 +46,11 @@ export function renderResultsTable(product) {
     tr.appendChild(tdResultsTally);
     
     const tdViewedChosenPercent = document.createElement('td');
-    tdViewedChosenPercent.textContent = (((+product.chosenTally) / (+product.shownTally) * 100) + '%');
+    if(product.shownTally === 0) {
+        tdViewedChosenPercent.textContent = 'N/A';
+    } else {
+        tdViewedChosenPercent.textContent = (((+product.chosenTally) / (+product.shownTally) * 100).toFixed(1) + '%');
+    }
     tr.appendChild(tdViewedChosenPercent);
 
 

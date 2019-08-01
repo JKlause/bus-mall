@@ -79,6 +79,11 @@ img {
     object-fit: contain;
 }
 
+img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
 input:checked+img{
     transition-duration: 50ms;
     background-color: rgb(253, 0, 0);

@@ -23,7 +23,7 @@ test('basic get and save', (assert) => {
     assert.deepEqual(got, dog);
 })
 
-test('get trees uses bootstrapped trees', (assert) => {
+test('get productsData uses bootstrapped products', (assert) => {
     //arrange 
     //import products data to compare
     
@@ -34,16 +34,6 @@ test('get trees uses bootstrapped trees', (assert) => {
     assert.deepEqual(products, productsData);
 })
 
-test('get product shown tally, return [] if empty', (assert) => {
-    //arrange
-    const expected = [];
-
-    //act
-    const shownTally = store.getShownTally();
-
-    //assert
-    assert.deepEqual(expected, shownTally);
-})
 
 test('find product', (assert) => {
     //arrange
@@ -52,7 +42,9 @@ test('find product', (assert) => {
                 id: 'bag',
                 name: 'Star Wars Suitcase',
                 image: './assets/products/bag.jpg',
-                description: 'description of product'
+                description: 'Pack your bags and explore the galaxy with this incredible R2D2 luggage set.',
+                shownTally: 0,
+                chosenTally: 0
             };
     //imported productsData
 
@@ -63,20 +55,75 @@ test('find product', (assert) => {
     assert.deepEqual(expected, product);
 })
 
-
-test('update shown tally', (assert) => {
+test('find product by Id', (assert) => {
     //arrange
-    const expected = [{ id: 'bag', shownTally: 1 }];
+    const id = 'bag';
+    const expected = {
+                id: 'bag',
+                name: 'Star Wars Suitcase',
+                image: './assets/products/bag.jpg',
+                description: 'Pack your bags and explore the galaxy with this incredible R2D2 luggage set.',
+                shownTally: 0,
+                chosenTally: 0
+            };
+    //imported productsData
+
+    //act
+    const product = store.findProductById(id);
+
+    //assert
+    assert.deepEqual(expected, product);
+})
+test('increment shown tally', (assert) => {
+    //arrange
+    const expected = {
+        id: 'bag',
+        name: 'Star Wars Suitcase',
+        image: './assets/products/bag.jpg',
+        description: 'Pack your bags and explore the galaxy with this incredible R2D2 luggage set.',
+        shownTally: 1,
+        chosenTally: 0
+    };
     const product = {
         id: 'bag',
         name: 'Star Wars Suitcase',
         image: './assets/products/bag.jpg',
+        description: 'Pack your bags and explore the galaxy with this incredible R2D2 luggage set.',
+        shownTally: 0,
+        chosenTally: 0
     };
 
     //act
-    store.updateShownTally(product.id);
-    const shownTally = store.getShownTally();
+    store.incrementShownTally(product.id);
+    const newProduct = store.findProductById(product.id);
 
     //assert
-    assert.deepEqual(expected, shownTally);
+    assert.deepEqual(newProduct, expected);
+})
+
+test('increment chosen tally', (assert) => {
+    //arrange
+    const expected = {
+        id: 'bag',
+        name: 'Star Wars Suitcase',
+        image: './assets/products/bag.jpg',
+        description: 'Pack your bags and explore the galaxy with this incredible R2D2 luggage set.',
+        shownTally: 1,
+        chosenTally: 1
+    };
+    const product = {
+        id: 'bag',
+        name: 'Star Wars Suitcase',
+        image: './assets/products/bag.jpg',
+        description: 'Pack your bags and explore the galaxy with this incredible R2D2 luggage set.',
+        shownTally: 1,
+        chosenTally: 0
+    };
+
+    //act
+    store.incrementChosenTally(product.id);
+    const newProduct = store.findProductById(product.id);
+
+    //assert
+    assert.deepEqual(expected, newProduct);
 })
