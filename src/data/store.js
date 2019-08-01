@@ -32,6 +32,9 @@ const store = {
         }
         return null;
     },
+    updateShownTallyTwo(id) {
+        const product = store.findProduct()
+    },
     getProductById(id) {
         const products = store.get('products');
         const product = store.findProduct(products, id);
@@ -74,6 +77,7 @@ const store = {
         }
         store.save('shown-tally', shownTally);
     },
+  
     getChosenTally() {
         let chosenTally = store.get('chosen-tally')
         if(!chosenTally) {
