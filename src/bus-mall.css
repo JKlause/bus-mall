@@ -79,6 +79,11 @@ img {
     object-fit: contain;
 }
 
+input:checked+img{
+    transition-duration: 50ms;
+    background-color: rgb(253, 0, 0);
+}
+
 .product-title {
     text-align: center;
     font-size: 1.4em;
@@ -116,4 +121,45 @@ h3 {
 
 .hidden {
     display: none;
+}
+
+#results-div h2{
+    color:  rgb(253, 0, 0);
+    text-align: center;
+    font-size: 3em;
+    width: 100%;
+    margin-right: 5px;
+}
+
+.left-justification {
+    text-align: left;
+}
+
+
+table {
+    border: 3px solid  rgb(122, 48, 48);
+    border-collapse: collapse;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+thead {
+    background:rgb(187, 9, 9);
+    color: white;
+}
+td, th {
+    border: 2px solid  rgb(122, 48, 48);
+}
+tbody {
+    background: white;
+}
+table th, table td {
+    text-align: right;
+    padding: 10px;
+}
+tbody tr:nth-child(even) {
+    background: rgb(243, 113, 113);
+    color: white;
 }

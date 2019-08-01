@@ -14,32 +14,33 @@
     </header>
     
     <main>
-        <h3>Please Click On The Product You Would Be Most Interested In Purchasing And Click Submit</h2>
-        <div id="product-render-section" class="container">
-            <label class="product">
-                <p class="product-title">Star Wars Suitcase</p>
-                <input type="radio" name="product" value="">
-                <img src="./assets/products/bag.jpg">
-                <p class="description">description of product</p>
-            </label>
-            <label class="product">
-                <input type="radio" name="product" value="">
-                <img src="./assets/products/bag.jpg">
-                <p class="description"></p>
-            </label>
-            <label class="product">
-                <input type="radio" name="product" value="">
-                <img src="./assets/products/bag.jpg">
-                <p class="description"></p>
-            </label>
-        </div> 
-        
-        <div class="container">
-            <button id="submit-button">Submit</button>
+        <div id="product-choice-div">
+            <h3>Please Click On The Product You Would Be Most Interested In Purchasing And Click Submit</h3>
+            <form id="form">
+                <div id="product-render-section" class="container"></div>
+                
+                <div class="container">
+                    <button id="submit-button">Submit</button>
+                </div>
+            </form>
         </div>
 
-        <div class="hidden">
+        <div id='results-div' class="hidden">
             <h2>Results</h2>
+            <div class=container>
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="left-justification">Product Name</th>
+                            <th>Number of Times Viewed</th>
+                            <th>Number of Times Clicked</th>
+                            <th>Percentage of Times Viewed And Clicked</th>
+                        </tr>
+                    </thead>
+                    <tbody id='results-table-body'></tbody>
+                </table>
+            </div>
+            <button id="reset-form">Reset Form</button>
         </div>
     </main>
     <script src="./src/bus-mall.js" type="module"></script>

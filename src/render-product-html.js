@@ -1,19 +1,55 @@
 import store from "./data/store.js";
 
-export default function renderProductInHtml(product, i) {
-    const button = document.createElement('button');
-    button.value = product.id
+export default function renderProductInHtml(product, callback) {
+    const label = document.createElement('label');
+    label.className = 'product';
+
+    const pTitle = document.createElement('p');
+    pTitle.className = 'product-title';
+    pTitle.textContent = product.name;
+    label.appendChild(pTitle);
+
+    const input = document.createElement('input');
+    input.type = 'radio';
+    input.name = 'product';
+    input.value = product.id;
+    input.required = true;
+    label.appendChild(input);
 
     const img = document.createElement('img');
-    img.id = 'image-' + i;
     img.src = product.image;
-    button.appendChild(img);
+    label.appendChild(img);
 
-    button.addEventListener('click', () => {
-        store.updateChosenTally(product.id);
-        return;
-    })
+    const pDescription = document.createElement('p');
+    pDescription.className = 'description'
+    pDescription.textContent = product.description
+    label.appendChild(pDescription);
 
-    return button;
+    return label;
 }
 
+export function renderResultsTable(product) {
+
+    const tr = document.createElement('tr');
+
+    const tdName = document.createElement('td');
+    tdName.className = 'left-justification'
+    tdName.textContent = product.name;
+    tr.appendChild(tdName)
+
+    const tdShownTally = document.createElement('td');
+    tdShownTally.textContent = product.shownTally;
+    tr.appendChild(tdShownTally);
+
+    const tdResultsTally = document.createElement('td');
+    tdResultsTally.textContent = product.chosenTally;
+    tr.appendChild(tdResultsTally);
+    
+    const tdViewedChosenPercent = document.createElement('td');
+    tdViewedChosenPercent.textContent = (((+product.chosenTally) / (+product.shownTally) * 100) + '%');
+    tr.appendChild(tdViewedChosenPercent);
+
+
+
+    return tr
+}

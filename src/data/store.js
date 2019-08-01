@@ -17,6 +17,10 @@ const store = {
             store.save('products', productsData);
             products = productsData;
         }
+        if(products === []) {
+            store.save('products', productsData);
+            products = productsData;
+        }
         return products;
     },
     findProduct(products, id) {
@@ -40,6 +44,21 @@ const store = {
         }
         return shownTally;
     },
+    resetShownTally() {
+        let shownTally = store.getShownTally();
+        shownTally = [];
+        store.save('shown-tally', shownTally);
+    },
+    resetChosenTally() {
+        let chosenTally = store.get('chosen-tally');
+        chosenTally = [];
+        store.save('chosen-tally', chosenTally);
+    },
+    resetProducts() {
+        let products = store.getProducts();
+        products = [];
+        store.save('products', products);
+    },
     updateShownTally(id) {
         let shownTally = store.getShownTally();
         const product = store.findProduct(shownTally, id);
@@ -47,13 +66,13 @@ const store = {
             product.shownTally = +product.shownTally + 1;
         }
         else {
-                const newShownTally = {
-                    id: id,
-                    shownTally: 1
-                }
-                shownTally.push(newShownTally);
-            store.save('shown-tally', shownTally);
+            const newShownTally = {
+                id: id,
+                shownTally: 1
+            }
+            shownTally.push(newShownTally);
         }
+        store.save('shown-tally', shownTally);
     },
     getChosenTally() {
         let chosenTally = store.get('chosen-tally')

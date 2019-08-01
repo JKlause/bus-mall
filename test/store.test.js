@@ -52,6 +52,7 @@ test('find product', (assert) => {
                 id: 'bag',
                 name: 'Star Wars Suitcase',
                 image: './assets/products/bag.jpg',
+                description: 'description of product'
             };
     //imported productsData
 
