@@ -187,5 +187,10 @@ canvas {
 }
 
 #chart-div {
-    
+    display: flex;
+    width: 80vw;
+    margin-top: 2vw;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: center;
 }

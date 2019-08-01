@@ -15,8 +15,6 @@ store.resetProductsList();
 let products = store.getProducts();
 let turns = 1;
 
-
-
 productSurveyRound();
 
 form.addEventListener('submit', (event) => {
@@ -42,7 +40,7 @@ function productSurveyRound() {
     let lastThreeProductsRendered = store.get('last-three-items');
     let iterationProductsSet = new ProductSet(products);
 
-    if(turns <= 2) {
+    if(turns <= 25) {
         lastThreeProductsRendered = updateIterationProductsSet(lastThreeProductsRendered, iterationProductsSet);
 
         removeHTMLOfPreviousItemsRendered(productRenderSection);
