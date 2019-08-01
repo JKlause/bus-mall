@@ -129,7 +129,7 @@ test('increment chosen tally', (assert) => {
     assert.deepEqual(expected, newProduct);
 });
 
-test('get productsData uses bootstrapped products', (assert) => {
+test('reset products list to original productsData', (assert) => {
     //arrange 
     //import products data to compare
     let products = [{
@@ -155,5 +155,50 @@ test('get productsData uses bootstrapped products', (assert) => {
 
     //assert
     assert.deepEqual (products, productsData);
+});
+
+test('getHistoricResults bootstraps productsData', (assert) => {
+    //arrange 
+    //import products data to compare
+    
+    
+    //act
+    store.getHistoricResults();
+    const historicResults = store.getHistoricResults();
+
+    //assert
+    assert.deepEqual (historicResults, productsData);
+});
+
+test('updateHistoricResults updates historic results', (assert) => {
+    //arrange 
+    //import products data to compare
+    const productList = store.getProducts();
+    
+    const updateOnProduct = {
+        id: 'cat',
+        name: 'Star Wars Suitcase',
+        image: './assets/products/bag.jpg',
+        description: 'Pack your bags and explore the galaxy with this incredible R2D2 luggage set.',
+        shownTally: 3,
+        chosenTally: 2,
+    };
+    productList.push(updateOnProduct);
+    store.save('products');
+
+    const expected = {
+        id: 'cat',
+        name: 'Star Wars Suitcase',
+        image: './assets/products/bag.jpg',
+        description: 'Pack your bags and explore the galaxy with this incredible R2D2 luggage set.',
+        shownTally: 3,
+        chosenTally: 2,
+    };
+    
+    //act
+    const historicResults = store.getHistoricResults();
+    const updatedProduct = store.findProduct(historicResults, 'cat');
+    //assert
+    assert.deepEqual (updatedProduct, expected);
 });
 

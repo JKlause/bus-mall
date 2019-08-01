@@ -43,13 +43,13 @@ h3 {
 }
 
 header a{
-    margin-left: 40vw;
+    margin-left: 10vw;
     margin-right: 10px;
     color: rgb(187, 9, 9);
     font-size: 1.3em;
     text-align: right;
     font-weight: bolder;
-    padding-top: 70px;
+    padding-top: 75px;
     text-decoration: underline;
 
 }

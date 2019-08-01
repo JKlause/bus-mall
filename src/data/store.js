@@ -19,6 +19,14 @@ const store = {
         }
         return products;
     },
+    getHistoricResults() {
+        let historicResults = store.get('historic-results');
+        if(!historicResults) {
+            store.save('historic-results', productsData);
+            historicResults = productsData;
+        }
+        return historicResults;
+    },
     resetProductsList() {
         store.save('products', productsData);
     },
@@ -48,7 +56,21 @@ const store = {
         product.chosenTally = +product.chosenTally + 1;
         store.save('products', products);
     },
+    updateHistoricResults() {
+        let products = store.getProducts();
+        let historicResults = store.getHistoricResults();
+        
+        for(let i = 0; i < products.length; i++) {
+            for(let j = 0; j < historicResults.length; j++) {
+                historicResults[i].shownTally = +historicResults[i].shownTally + +products[i].shownTally;
+                historicResults[i].chosenTally = +historicResults[i].chosenTally + +products[i].chosenTally;
+            }
+        }
+        
+        store.save('historic-results', historicResults);
+    }
+
 };
 
 export default store;
-
+    

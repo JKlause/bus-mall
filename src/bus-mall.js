@@ -96,6 +96,8 @@ function afterSurveyResults() {
         const dom = renderResultsTable(allProducts[i]);
         resultsTableBody.appendChild(dom);
     }
+    
+    store.updateHistoricResults();
 
     const resultsCtx = document.getElementById('results-chart').getContext('2d');
 
