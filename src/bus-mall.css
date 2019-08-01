@@ -180,6 +180,9 @@ tbody tr:nth-child(even) {
     width: 20vw;
 }
 
-
+canvas {
+  width: 75%;
+  height: 500px;
+}
 
 

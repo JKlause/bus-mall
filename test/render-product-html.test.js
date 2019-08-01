@@ -7,6 +7,7 @@ QUnit.module('render product in html');
 
 test('rendering product in html', assert => {
     // arrange
+    // eslint-disable-next-line no-useless-escape
     const expected = '<label class="product"><p class="product-title">Star Wars Suitcase</p><input type="radio" name="product" value="bag" required=\"\"><img src="./assets/products/bag.jpg"><p class="description">description of product</p></label>';
     const product = {
         id: 'bag',
@@ -22,7 +23,7 @@ test('rendering product in html', assert => {
 });
 
 test('rendering results table', assert => {
-    // arrange
+    // arrange 
     const expected = '<tr><td class="left-justification">Star Wars Suitcase</td><td>2</td><td>1</td><td>50.0%</td></tr>';
     const product = {
         id: 'bag',

@@ -40,4 +40,4 @@ test('remove product by id', assert => {
     //assert
     assert.notOk(productSet.list.includes(productToRemove));
 
-})
+});

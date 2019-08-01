@@ -1,6 +1,6 @@
 
 const productsData = [
-     {
+    {
         id: 'bag',
         name: 'Star Wars Suitcase',
         image: './assets/products/bag.jpg',
@@ -8,7 +8,7 @@ const productsData = [
         shownTally: 0,
         chosenTally: 0,
     },
-     {
+    {
         id: 'banana',
         name: 'Banana Slicer',
         image: './assets/products/banana.jpg',
@@ -16,7 +16,7 @@ const productsData = [
         shownTally: 0,
         chosenTally: 0,
     },
-     {
+    {
         id: 'bathroom',
         name: 'Bathroom iPad Stand',
         image: './assets/products/bathroom.jpg',
@@ -24,7 +24,7 @@ const productsData = [
         shownTally: 0,
         chosenTally: 0,
     },
-     {
+    {
         id: 'boots',
         name: 'Open-toed Rain Boots',
         image: './assets/products/boots.jpg',
@@ -32,7 +32,7 @@ const productsData = [
         shownTally: 0,
         chosenTally: 0,
     },
-     {
+    {
         id: 'breakfast',
         name: 'All-in-one Breakfast Machine',
         image: './assets/products/breakfast.jpg',
@@ -40,7 +40,7 @@ const productsData = [
         shownTally: 0,
         chosenTally: 0,
     },
-     {
+    {
         id: 'bubblegum',
         name: 'Meatball Bubble Gum',
         image: './assets/products/bubblegum.jpg',
@@ -48,7 +48,7 @@ const productsData = [
         shownTally: 0,
         chosenTally: 0,
     },
-     {
+    {
         id: 'chair',
         name: 'Inverted Chair',
         image: './assets/products/chair.jpg',
@@ -56,7 +56,7 @@ const productsData = [
         shownTally: 0,
         chosenTally: 0,
     },
-     {
+    {
         id: 'cthulhu',
         name: 'Cthulhu Action Figure',
         image: './assets/products/cthulhu.jpg',
@@ -64,7 +64,7 @@ const productsData = [
         shownTally: 0,
         chosenTally: 0,
     },
-     {
+    {
         id: 'dog-duck',
         name: 'Dog Duck Lips',
         image: './assets/products/dog-duck.jpg',
@@ -72,7 +72,7 @@ const productsData = [
         shownTally: 0,
         chosenTally: 0,
     },
-     {
+    {
         id: 'dragon',
         name: 'Can of Dragon Meat',
         image: './assets/products/dragon.jpg',
@@ -80,7 +80,7 @@ const productsData = [
         shownTally: 0,
         chosenTally: 0,
     },
-     {
+    {
         id: 'pen',
         name: 'Utensil Pen',
         image: './assets/products/pen.jpg',
@@ -88,7 +88,7 @@ const productsData = [
         shownTally: 0,
         chosenTally: 0,
     },
-     {
+    {
         id: 'pet-sweep',
         name: 'Pet Sweep Pads',
         image: './assets/products/pet-sweep.jpg',
@@ -96,7 +96,7 @@ const productsData = [
         shownTally: 0,
         chosenTally: 0,
     },
-     {
+    {
         id: 'scissors',
         name: 'Pizza Scissors',
         image: './assets/products/scissors.jpg',
@@ -104,7 +104,7 @@ const productsData = [
         shownTally: 0,
         chosenTally: 0,
     },
-     {
+    {
         id: 'shark',
         name: 'Shark Sleeping Bag',
         image: './assets/products/shark.jpg',
@@ -112,7 +112,7 @@ const productsData = [
         shownTally: 0,
         chosenTally: 0,
     },
-     {
+    {
         id: 'sweep',
         name: 'Baby Sweep Onesie',
         image: './assets/products/sweep.png',
@@ -120,7 +120,7 @@ const productsData = [
         shownTally: 0,
         chosenTally: 0,
     },
-     {
+    {
         id: 'tauntaun',
         name: 'Tauntaun Sleeping Bag',
         image: './assets/products/tauntaun.jpg',
@@ -128,7 +128,7 @@ const productsData = [
         shownTally: 0,
         chosenTally: 0,
     },
-     {
+    {
         id: 'unicorn',
         name: 'Unicorn Meat',
         image: './assets/products/unicorn.jpg',
@@ -136,7 +136,7 @@ const productsData = [
         shownTally: 0,
         chosenTally: 0,
     },
-     {
+    {
         id: 'usb',
         name: 'USB Tail',
         image: './assets/products/usb.gif',
@@ -144,7 +144,7 @@ const productsData = [
         shownTally: 0,
         chosenTally: 0,
     },
-     {
+    {
         id: 'water-can',
         name: 'Inverse Water Can',
         image: './assets/products/water-can.jpg',
@@ -152,7 +152,7 @@ const productsData = [
         shownTally: 0,
         chosenTally: 0,
     },
-     {
+    {
         id: 'wine-glass',
         name: 'The Ultimate Snifter',
         image: './assets/products/wine-glass.jpg',

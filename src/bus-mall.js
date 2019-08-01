@@ -8,7 +8,7 @@ const form = document.getElementById('form');
 const productChoiceDiv = document.getElementById('product-choice-div');
 const resultsDiv = document.getElementById('results-div');
 const resultsTableBody = document.getElementById('results-table-body');
-const resetSurveyButton = document.getElementById('reset-survey-button')
+const resetSurveyButton = document.getElementById('reset-survey-button');
 
 store.resetProductsList();
 
@@ -22,10 +22,10 @@ productSurveyRound();
 form.addEventListener('submit', (event) => {
     event.preventDefault();
     const formData = new FormData(form);
-    const inputValue = formData.get('product')
-    store.incrementChosenTally(inputValue)
+    const inputValue = formData.get('product');
+    store.incrementChosenTally(inputValue);
     productSurveyRound();
-})
+});
 
 resetSurveyButton.addEventListener('click', () => {
     productChoiceDiv.classList.remove('hidden');
@@ -35,7 +35,7 @@ resetSurveyButton.addEventListener('click', () => {
     turns = 1;
     removeHTMLOfPreviousItemsRendered(resultsTableBody);
     productSurveyRound();
-})
+});
 
 
 function productSurveyRound() {
@@ -59,11 +59,11 @@ function productSurveyRound() {
 }
 
 function updateIterationProductsSet(lastThreeProductsRendered, iterationProductsSet) {
-    if (!lastThreeProductsRendered) {
+    if(!lastThreeProductsRendered) {
         lastThreeProductsRendered = [];
     }
     else {
-        for (let i = 0; i < lastThreeProductsRendered.length; i++) {
+        for(let i = 0; i < lastThreeProductsRendered.length; i++) {
             const previousProductRendered = lastThreeProductsRendered[i];
             iterationProductsSet.removeProductById(previousProductRendered.id);
         }
@@ -73,13 +73,13 @@ function updateIterationProductsSet(lastThreeProductsRendered, iterationProducts
 }
 
 function removeHTMLOfPreviousItemsRendered(parentOfSectionToRemove) {
-    while (parentOfSectionToRemove.firstChild) {
+    while(parentOfSectionToRemove.firstChild) {
         parentOfSectionToRemove.removeChild(parentOfSectionToRemove.firstChild);
     }
 }
 
 function randomlyGetThreeProducts(iterationProductsSet, lastThreeProductsRendered) {
-    for (let i = 0; i < 3; i++) {
+    for(let i = 0; i < 3; i++) {
         const product = iterationProductsSet.getRandomProduct();
         iterationProductsSet.removeProductById(product.id);
         const dom = renderProductInHtml(product);
@@ -94,7 +94,7 @@ function afterSurveyResults() {
     resultsDiv.classList.remove('hidden');
 
     const allProducts = store.getProducts();
-    for (let i = 0; i < allProducts.length; i++) {
+    for(let i = 0; i < allProducts.length; i++) {
         const dom = renderResultsTable(allProducts[i]);
         resultsTableBody.appendChild(dom);
     }

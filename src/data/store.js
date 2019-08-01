@@ -1,4 +1,4 @@
-import productsData from "./products.js";
+import productsData from './products.js';
 
 const store = {
     storage: window.localStorage,
@@ -17,15 +17,9 @@ const store = {
             store.save('products', productsData);
             products = productsData;
         }
-        // if(products === []) {
-        //     store.save('products', productsData);
-        //     products = productsData;
-        // }
         return products;
     },
     resetProductsList() {
-        // let products = store.get('products');
-        // products = productsData;
         store.save('products', productsData);
     },
     findProduct(products, id) {
@@ -39,7 +33,7 @@ const store = {
     },
     findProductById(id) {
         const products = store.getProducts();
-        const product = store.findProduct(products, id)
+        const product = store.findProduct(products, id);
         return product;
     },
     incrementShownTally(id) {

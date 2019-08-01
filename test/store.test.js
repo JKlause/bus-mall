@@ -21,7 +21,7 @@ test('basic get and save', (assert) => {
     const got = store.get(key);
     //assert
     assert.deepEqual(got, dog);
-})
+});
 
 test('get productsData uses bootstrapped products', (assert) => {
     //arrange 
@@ -32,20 +32,20 @@ test('get productsData uses bootstrapped products', (assert) => {
 
     //assert
     assert.deepEqual(products, productsData);
-})
+});
 
 
 test('find product', (assert) => {
     //arrange
     const id = 'bag';
     const expected = {
-                id: 'bag',
-                name: 'Star Wars Suitcase',
-                image: './assets/products/bag.jpg',
-                description: 'Pack your bags and explore the galaxy with this incredible R2D2 luggage set.',
-                shownTally: 0,
-                chosenTally: 0
-            };
+        id: 'bag',
+        name: 'Star Wars Suitcase',
+        image: './assets/products/bag.jpg',
+        description: 'Pack your bags and explore the galaxy with this incredible R2D2 luggage set.',
+        shownTally: 0,
+        chosenTally: 0
+    };
     //imported productsData
 
     //act
@@ -53,19 +53,19 @@ test('find product', (assert) => {
 
     //assert
     assert.deepEqual(expected, product);
-})
+});
 
 test('find product by Id', (assert) => {
     //arrange
     const id = 'bag';
     const expected = {
-                id: 'bag',
-                name: 'Star Wars Suitcase',
-                image: './assets/products/bag.jpg',
-                description: 'Pack your bags and explore the galaxy with this incredible R2D2 luggage set.',
-                shownTally: 0,
-                chosenTally: 0
-            };
+        id: 'bag',
+        name: 'Star Wars Suitcase',
+        image: './assets/products/bag.jpg',
+        description: 'Pack your bags and explore the galaxy with this incredible R2D2 luggage set.',
+        shownTally: 0,
+        chosenTally: 0
+    };
     //imported productsData
 
     //act
@@ -73,7 +73,8 @@ test('find product by Id', (assert) => {
 
     //assert
     assert.deepEqual(expected, product);
-})
+});
+
 test('increment shown tally', (assert) => {
     //arrange
     const expected = {
@@ -99,7 +100,7 @@ test('increment shown tally', (assert) => {
 
     //assert
     assert.deepEqual(newProduct, expected);
-})
+});
 
 test('increment chosen tally', (assert) => {
     //arrange
@@ -126,7 +127,7 @@ test('increment chosen tally', (assert) => {
 
     //assert
     assert.deepEqual(expected, newProduct);
-})
+});
 
 test('get productsData uses bootstrapped products', (assert) => {
     //arrange 
@@ -139,14 +140,14 @@ test('get productsData uses bootstrapped products', (assert) => {
         shownTally: 3,
         chosenTally: 2,
     },
-     {
+    {
         id: 'banana',
         name: 'Banana Slicer',
         image: './assets/products/banana.jpg',
         description: 'Never cut your bananas the same way again!',
         shownTally: 1,
         chosenTally: 1,
-    }]
+    }];
     
     //act
     store.resetProductsList();
@@ -154,5 +155,5 @@ test('get productsData uses bootstrapped products', (assert) => {
 
     //assert
     assert.deepEqual (products, productsData);
-})
+});
 

@@ -1,6 +1,4 @@
-import store from "./data/store.js";
-
-export default function renderProductInHtml(product, callback) {
+export default function renderProductInHtml(product) {
     const label = document.createElement('label');
     label.className = 'product';
 
@@ -21,8 +19,8 @@ export default function renderProductInHtml(product, callback) {
     label.appendChild(img);
 
     const pDescription = document.createElement('p');
-    pDescription.className = 'description'
-    pDescription.textContent = product.description
+    pDescription.className = 'description';
+    pDescription.textContent = product.description;
     label.appendChild(pDescription);
 
     return label;
@@ -33,9 +31,9 @@ export function renderResultsTable(product) {
     const tr = document.createElement('tr');
 
     const tdName = document.createElement('td');
-    tdName.className = 'left-justification'
+    tdName.className = 'left-justification';
     tdName.textContent = product.name;
-    tr.appendChild(tdName)
+    tr.appendChild(tdName);
 
     const tdShownTally = document.createElement('td');
     tdShownTally.textContent = product.shownTally;
@@ -55,5 +53,5 @@ export function renderResultsTable(product) {
 
 
 
-    return tr
+    return tr;
 }
