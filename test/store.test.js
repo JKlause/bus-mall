@@ -127,3 +127,32 @@ test('increment chosen tally', (assert) => {
     //assert
     assert.deepEqual(expected, newProduct);
 })
+
+test('get productsData uses bootstrapped products', (assert) => {
+    //arrange 
+    //import products data to compare
+    let products = [{
+        id: 'bag',
+        name: 'Star Wars Suitcase',
+        image: './assets/products/bag.jpg',
+        description: 'Pack your bags and explore the galaxy with this incredible R2D2 luggage set.',
+        shownTally: 3,
+        chosenTally: 2,
+    },
+     {
+        id: 'banana',
+        name: 'Banana Slicer',
+        image: './assets/products/banana.jpg',
+        description: 'Never cut your bananas the same way again!',
+        shownTally: 1,
+        chosenTally: 1,
+    }]
+    
+    //act
+    store.resetProductsList();
+    products = store.getProducts();
+
+    //assert
+    assert.deepEqual (products, productsData);
+})
+

@@ -2,11 +2,9 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
 body{
     background-color: rgb(105, 101, 101)
 }
-
 
 header {
     display: flex;
@@ -29,86 +27,6 @@ header h1 {
     font-size: 3em;
 }
 
-header a{
-    margin-left: 40vw;
-    margin-right: 10px;
-    color: rgb(187, 9, 9);
-    font-size: 1.3em;
-    text-align: right;
-    font-weight: bolder;
-    padding-top: 70px;
-    text-decoration: underline;
-
-}
-
-.container {
-    display: flex;
-    width: 100vw;
-    margin-right: auto;
-    margin-left: auto;
-    justify-content: center;
-}
-
-button {
-    border: 3px solid rgb(122, 48, 48);
-    background-color: rgb(243, 113, 113);
-    color: rgb(122, 48, 48);
-    font-size: 1.3em;
-    margin: 3vw;
-    height: 5vh;
-    width: 10vw;
-}
-
-button:hover {
-    transition-duration: 350ms;
-    background-color: rgb(253, 0, 0);
-    border: 3px solid rgb(187, 9, 9);
-    cursor: pointer;
-}
-
-img {
-    object-fit: contain;
-}
-
-.product img {
-    border: 3px solid rgb(122, 48, 48);
-    background-color: rgb(243, 113, 113);
-    margin: 0vw 3vw;
-    height: 50vh;
-    width: 25vw;
-    object-fit: contain;
-}
-
-img:hover {
-    transform: scale(1.1);
-    cursor: pointer;
-}
-
-input:checked+img{
-    transition-duration: 50ms;
-    background-color: rgb(253, 0, 0);
-}
-
-.product-title {
-    text-align: center;
-    font-size: 1.4em;
-    font-weight: bolder;
-    color:  rgb(243, 113, 113);
-}
-
-.description {
-    font-size: 1.1em;
-    font-weight: bold;
-    color: rgb(243, 113, 113);
-    border: 2px solid rgb(122, 48, 48);
-    margin: 0 3vw;
-}
-
-
-input {
-    display: none;
-}
-
 h2 {
     color: rgb(187, 9, 9);
     text-align: center;
@@ -124,22 +42,52 @@ h3 {
     text-decoration: underline;
 }
 
-.hidden {
+header a{
+    margin-left: 40vw;
+    margin-right: 10px;
+    color: rgb(187, 9, 9);
+    font-size: 1.3em;
+    text-align: right;
+    font-weight: bolder;
+    padding-top: 70px;
+    text-decoration: underline;
+
+}
+
+button {
+    border: 3px solid rgb(122, 48, 48);
+    background-color: rgb(243, 113, 113);
+    color: rgb(122, 48, 48);
+    font-size: 1.3em;
+    margin: 3vw;
+    height: 5vh;
+    width: 15vw;
+}
+
+button:hover {
+    transition-duration: 350ms;
+    background-color: rgb(253, 0, 0);
+    border: 3px solid rgb(187, 9, 9);
+    cursor: pointer;
+}
+
+img {
+    object-fit: contain;
+}
+
+img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+input {
     display: none;
 }
 
-#results-div h2{
-    color:  rgb(253, 0, 0);
-    text-align: center;
-    font-size: 3em;
-    width: 100%;
-    margin-right: 5px;
+input:checked+img{
+    transition-duration: 50ms;
+    background-color: rgb(253, 0, 0);
 }
-
-.left-justification {
-    text-align: left;
-}
-
 
 table {
     border: 3px solid  rgb(122, 48, 48);
@@ -154,17 +102,84 @@ thead {
     background:rgb(187, 9, 9);
     color: white;
 }
+
 td, th {
     border: 2px solid  rgb(122, 48, 48);
 }
+
 tbody {
     background: white;
 }
+
 table th, table td {
     text-align: right;
     padding: 10px;
 }
+
 tbody tr:nth-child(even) {
     background: rgb(243, 113, 113);
     color: white;
 }
+
+.container {
+    display: flex;
+    width: 100vw;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: center;
+}
+
+.product-title {
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: bolder;
+    color:  rgb(243, 113, 113);
+}
+
+.description {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: rgb(243, 113, 113);
+    border: 2px solid rgb(122, 48, 48);
+    margin: 0 3vw;
+    padding: 1vw;
+    width: 23vw;
+}
+
+.product img {
+    border: 3px solid rgb(122, 48, 48);
+    background-color: rgb(243, 113, 113);
+    margin: 0vw 3vw;
+    height: 50vh;
+    width: 25vw;
+    object-fit: contain;
+}
+
+.hidden {
+    display: none;
+}
+
+.left-justification {
+    text-align: left;
+}
+
+.center-justification {
+    text-align: center;
+}
+
+#results-div h2 {
+    color:  rgb(253, 0, 0);
+    text-align: center;
+    font-size: 3em;
+    width: 100%;
+    margin-right: 5px;
+}
+
+#reset-survey-button {
+    height: 6vh;
+    width: 20vw;
+}
+
+
+
+

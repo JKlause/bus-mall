@@ -17,11 +17,16 @@ const store = {
             store.save('products', productsData);
             products = productsData;
         }
-        if(products === []) {
-            store.save('products', productsData);
-            products = productsData;
-        }
+        // if(products === []) {
+        //     store.save('products', productsData);
+        //     products = productsData;
+        // }
         return products;
+    },
+    resetProductsList() {
+        // let products = store.get('products');
+        // products = productsData;
+        store.save('products', productsData);
     },
     findProduct(products, id) {
         for(let i = 0; i < products.length; i++) {

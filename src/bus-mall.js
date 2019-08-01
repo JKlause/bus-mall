@@ -8,9 +8,14 @@ const form = document.getElementById('form');
 const productChoiceDiv = document.getElementById('product-choice-div');
 const resultsDiv = document.getElementById('results-div');
 const resultsTableBody = document.getElementById('results-table-body');
+const resetSurveyButton = document.getElementById('reset-survey-button')
 
-const products = store.getProducts();
-let turns = 1
+store.resetProductsList();
+
+let products = store.getProducts();
+let turns = 1;
+
+
 
 productSurveyRound();
 
@@ -22,14 +27,25 @@ form.addEventListener('submit', (event) => {
     productSurveyRound();
 })
 
+resetSurveyButton.addEventListener('click', () => {
+    productChoiceDiv.classList.remove('hidden');
+    resultsDiv.classList.add('hidden');
+    store.resetProductsList();
+    products = store.getProducts();
+    turns = 1;
+    removeHTMLOfPreviousItemsRendered(resultsTableBody);
+    productSurveyRound();
+})
+
+
 function productSurveyRound() {
     let lastThreeProductsRendered = store.get('last-three-items');
     let iterationProductsSet = new ProductSet(products);
 
-    if(turns <= 25) {
+    if(turns <= 2) {
         lastThreeProductsRendered = updateIterationProductsSet(lastThreeProductsRendered, iterationProductsSet);
 
-        removeHTMLOfPreviousItemsRendered();
+        removeHTMLOfPreviousItemsRendered(productRenderSection);
 
         randomlyGetThreeProducts(iterationProductsSet, lastThreeProductsRendered);
 
@@ -56,9 +72,9 @@ function updateIterationProductsSet(lastThreeProductsRendered, iterationProducts
     return lastThreeProductsRendered;
 }
 
-function removeHTMLOfPreviousItemsRendered() {
-    while (productRenderSection.firstChild) {
-        productRenderSection.removeChild(productRenderSection.firstChild);
+function removeHTMLOfPreviousItemsRendered(parentOfSectionToRemove) {
+    while (parentOfSectionToRemove.firstChild) {
+        parentOfSectionToRemove.removeChild(parentOfSectionToRemove.firstChild);
     }
 }
 
@@ -76,6 +92,7 @@ function randomlyGetThreeProducts(iterationProductsSet, lastThreeProductsRendere
 function afterSurveyResults() {
     productChoiceDiv.classList.add('hidden');
     resultsDiv.classList.remove('hidden');
+
     const allProducts = store.getProducts();
     for (let i = 0; i < allProducts.length; i++) {
         const dom = renderResultsTable(allProducts[i]);
