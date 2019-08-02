@@ -39,6 +39,10 @@ const store = {
         }
         return null;
     },
+    findProductById(id) {
+        const product = store.findProduct(productsData, id);
+        return product;
+    },
     incrementShownTally(id) {
         let products = store.getProducts();
         let product = store.findProduct(products, id);
