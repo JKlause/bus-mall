@@ -11,15 +11,13 @@ const resultsTableBody = document.getElementById('results-table-body');
 const resetSurveyButton = document.getElementById('reset-survey-button');
 
 store.resetProductsList();
-
 let products = store.getProducts();
-let turns = 1;
 
 const numberOfImagesToShow = 5;
- 
-
+let turns = 1;
 
 productSurveyRound(numberOfImagesToShow);
+
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -95,6 +93,7 @@ function afterSurveyResults() {
     resultsDiv.classList.remove('hidden');
 
     const allProducts = store.getProducts();
+
     for(let i = 0; i < allProducts.length; i++) {
         const dom = renderResultsTable(allProducts[i]);
         resultsTableBody.appendChild(dom);
@@ -102,20 +101,21 @@ function afterSurveyResults() {
     
     store.updateHistoricResults();
 
-    const resultsCtx = document.getElementById('results-chart').getContext('2d');
+    createChart(allProducts);
+}
 
+function createChart(allProducts) {
+    const resultsCtx = document.getElementById('results-chart').getContext('2d');
     const productLabels = [];
     const shownData = [];
     const chosenData = [];
-
     for(let i = 0; i < allProducts.length; i++) {
         const product = allProducts[i];
         productLabels.push(product.name);
         shownData.push(product.shownTally);
         chosenData.push(product.chosenTally);
     }
-    
-// eslint-disable-next-line no-unused-vars
+    // eslint-disable-next-line no-unused-vars
     const resultsChart = new Chart(resultsCtx, {
         type: 'bar',
         data: {
@@ -137,7 +137,7 @@ function afterSurveyResults() {
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero:true
+                        beginAtZero: true
                     }
                 }]
             }
