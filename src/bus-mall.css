@@ -130,6 +130,7 @@ tbody tr:nth-child(even) {
 
 .container {
     display: flex;
+    flex-wrap: wrap;
     width: 100vw;
     margin-right: auto;
     margin-left: auto;
@@ -197,19 +198,6 @@ canvas {
     display: flex;
     width: 80vw;
     margin-top: 2vw;
-    margin-right: auto;
-    margin-left: auto;
-    justify-content: center;
-}
-
-#images-to-see-input {
-    display: block;
-    height: 2vw;
-    margin-top: 2vw;
-}
-
-#images-to-see-button {
-    display: flex;
     margin-right: auto;
     margin-left: auto;
     justify-content: center;

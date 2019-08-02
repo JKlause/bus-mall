@@ -9,54 +9,46 @@ const productChoiceDiv = document.getElementById('product-choice-div');
 const resultsDiv = document.getElementById('results-div');
 const resultsTableBody = document.getElementById('results-table-body');
 const resetSurveyButton = document.getElementById('reset-survey-button');
-const imagesToSeeInput = document.getElementById('images-to-see-input');
-const imagesToSeeButton = document.getElementById('images-to-see-button');
-const imagesToSeeDiv = document.getElementById('images-to-see-div');
 
 store.resetProductsList();
 
-let numberOfImagesToShow = 0;
 let products = store.getProducts();
 let turns = 1;
 
-imagesToSeeButton.addEventListener('click', () => {
-    numberOfImagesToShow = imagesToSeeInput.value;
-    imagesToSeeDiv.classList.add('hidden');
-    productChoiceDiv.classList.remove('hidden');
-});
+const numberOfImagesToShow = 5;
+ 
 
 
-productSurveyRound();
+productSurveyRound(numberOfImagesToShow);
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
     const formData = new FormData(form);
     const inputValue = formData.get('product');
     store.incrementChosenTally(inputValue);
-    productSurveyRound();
+    productSurveyRound(numberOfImagesToShow);
 });
 
 resetSurveyButton.addEventListener('click', () => {
-    productChoiceDiv.classList.remove('hidden');
+    productRenderSection.classList.remove('hidden');
     resultsDiv.classList.add('hidden');
     store.resetProductsList();
     products = store.getProducts();
     turns = 1;
     removeHTMLOfPreviousItemsRendered(resultsTableBody);
-    productSurveyRound();
 });
 
 
-function productSurveyRound() {
+function productSurveyRound(numberOfImagesToShow) {
     let lastProductsRendered = store.get('last-items');
     let iterationProductsSet = new ProductSet(products);
 
-    if(turns <= 5) {
+    if(turns <= 25) {
         lastProductsRendered = updateIterationProductsSet(lastProductsRendered, iterationProductsSet);
 
         removeHTMLOfPreviousItemsRendered(productRenderSection);
 
-        randomlyGetProducts(iterationProductsSet, lastProductsRendered);
+        randomlyGetProducts(iterationProductsSet, lastProductsRendered, numberOfImagesToShow);
 
         store.save('last-items', lastProductsRendered);
         turns++;
