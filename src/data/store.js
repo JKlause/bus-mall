@@ -62,8 +62,10 @@ const store = {
         
         for(let i = 0; i < products.length; i++) {
             for(let j = 0; j < historicResults.length; j++) {
-                historicResults[i].shownTally = +historicResults[i].shownTally + +products[i].shownTally;
-                historicResults[i].chosenTally = +historicResults[i].chosenTally + +products[i].chosenTally;
+                if(products[i].name === historicResults[j].name) {
+                    historicResults[j].shownTally = +historicResults[j].shownTally + +products[i].shownTally;
+                    historicResults[j].chosenTally = +historicResults[j].chosenTally + +products[i].chosenTally;
+                }
             }
         }
         
@@ -73,4 +75,3 @@ const store = {
 };
 
 export default store;
-    

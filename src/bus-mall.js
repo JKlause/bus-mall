@@ -40,7 +40,7 @@ function productSurveyRound() {
     let lastThreeProductsRendered = store.get('last-three-items');
     let iterationProductsSet = new ProductSet(products);
 
-    if(turns <= 25) {
+    if(turns <= 5) {
         lastThreeProductsRendered = updateIterationProductsSet(lastThreeProductsRendered, iterationProductsSet);
 
         removeHTMLOfPreviousItemsRendered(productRenderSection);
