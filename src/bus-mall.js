@@ -9,11 +9,22 @@ const productChoiceDiv = document.getElementById('product-choice-div');
 const resultsDiv = document.getElementById('results-div');
 const resultsTableBody = document.getElementById('results-table-body');
 const resetSurveyButton = document.getElementById('reset-survey-button');
+const imagesToSeeInput = document.getElementById('images-to-see-input');
+const imagesToSeeButton = document.getElementById('images-to-see-button');
+const imagesToSeeDiv = document.getElementById('images-to-see-div');
 
 store.resetProductsList();
 
+let numberOfImagesToShow = 0;
 let products = store.getProducts();
 let turns = 1;
+
+imagesToSeeButton.addEventListener('click', () => {
+    numberOfImagesToShow = imagesToSeeInput.value;
+    imagesToSeeDiv.classList.add('hidden');
+    productChoiceDiv.classList.remove('hidden');
+});
+
 
 productSurveyRound();
 
@@ -37,37 +48,37 @@ resetSurveyButton.addEventListener('click', () => {
 
 
 function productSurveyRound() {
-    let lastThreeProductsRendered = store.get('last-three-items');
+    let lastProductsRendered = store.get('last-items');
     let iterationProductsSet = new ProductSet(products);
 
     if(turns <= 5) {
-        lastThreeProductsRendered = updateIterationProductsSet(lastThreeProductsRendered, iterationProductsSet);
+        lastProductsRendered = updateIterationProductsSet(lastProductsRendered, iterationProductsSet);
 
         removeHTMLOfPreviousItemsRendered(productRenderSection);
 
-        randomlyGetThreeProducts(iterationProductsSet, lastThreeProductsRendered);
+        randomlyGetProducts(iterationProductsSet, lastProductsRendered);
 
-        store.save('last-three-items', lastThreeProductsRendered);
+        store.save('last-items', lastProductsRendered);
         turns++;
-        return lastThreeProductsRendered;
+        return lastProductsRendered;
     }
     else {
         afterSurveyResults();
     }
 }
 
-function updateIterationProductsSet(lastThreeProductsRendered, iterationProductsSet) {
-    if(!lastThreeProductsRendered) {
-        lastThreeProductsRendered = [];
+function updateIterationProductsSet(lastProductsRendered, iterationProductsSet) {
+    if(!lastProductsRendered) {
+        lastProductsRendered = [];
     }
     else {
-        for(let i = 0; i < lastThreeProductsRendered.length; i++) {
-            const previousProductRendered = lastThreeProductsRendered[i];
+        for(let i = 0; i < lastProductsRendered.length; i++) {
+            const previousProductRendered = lastProductsRendered[i];
             iterationProductsSet.removeProductById(previousProductRendered.id);
         }
-        lastThreeProductsRendered = [];
+        lastProductsRendered = [];
     }
-    return lastThreeProductsRendered;
+    return lastProductsRendered;
 }
 
 function removeHTMLOfPreviousItemsRendered(parentOfSectionToRemove) {
@@ -76,14 +87,14 @@ function removeHTMLOfPreviousItemsRendered(parentOfSectionToRemove) {
     }
 }
 
-function randomlyGetThreeProducts(iterationProductsSet, lastThreeProductsRendered) {
-    for(let i = 0; i < 3; i++) {
+function randomlyGetProducts(iterationProductsSet, lastProductsRendered, numberOfImagesToShow) {
+    for(let i = 0; i < numberOfImagesToShow; i++) {
         const product = iterationProductsSet.getRandomProduct();
         iterationProductsSet.removeProductById(product.id);
         const dom = renderProductInHtml(product);
         productRenderSection.appendChild(dom);
         store.incrementShownTally(product.id);
-        lastThreeProductsRendered.push(product);
+        lastProductsRendered.push(product);
     }
 }
 

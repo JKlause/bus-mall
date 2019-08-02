@@ -34,12 +34,19 @@ h2 {
 }
 
 h3 {
-    color:  rgb(253, 0, 0);
+    color:  rgb(219, 53, 53);
     text-align: center;
     font-size: 1.6em;
     width: 100%;
     margin-right: 5px;
     text-decoration: underline;
+}
+
+h4 {
+    color:  rgb(243, 113, 113);
+    font-size: 1.4em;
+    padding-right: 2vw;
+    margin-top: 2vw;
 }
 
 header a{
@@ -66,7 +73,7 @@ button {
 
 button:hover {
     transition-duration: 350ms;
-    background-color: rgb(253, 0, 0);
+    background-color: rgb(219, 53, 53);
     border: 3px solid rgb(187, 9, 9);
     cursor: pointer;
 }
@@ -86,7 +93,7 @@ input {
 
 input:checked+img{
     transition-duration: 50ms;
-    background-color: rgb(253, 0, 0);
+    background-color: rgb(219, 53, 53);
 }
 
 table {
@@ -190,6 +197,19 @@ canvas {
     display: flex;
     width: 80vw;
     margin-top: 2vw;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: center;
+}
+
+#images-to-see-input {
+    display: block;
+    height: 2vw;
+    margin-top: 2vw;
+}
+
+#images-to-see-button {
+    display: flex;
     margin-right: auto;
     margin-left: auto;
     justify-content: center;

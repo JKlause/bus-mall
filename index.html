@@ -17,7 +17,14 @@
     <main>
         <div id="product-choice-div">
             <h3>Please Click On The Product You Would Be Most Interested In Purchasing And Click Submit</h3>
-            <form id="form">
+            <div id="images-to-see-div">  
+                <div class="container">
+                    <h4>How Many Images Do You Want To See?</h4> <input id="images-to-see-input" type="number" min="2" max="10" required>
+                </div>
+                <button id="images-to-see-button" >Submit</button>
+            </div>  
+
+            <form id="form" class="hidden">
                 <div id="product-render-section" class="container"></div>
                 
                 <div class="container">
