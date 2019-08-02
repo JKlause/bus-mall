@@ -26,7 +26,7 @@ const store = {
             historicResults = productsData;
         }
         return historicResults;
-    },
+    }, 
     resetProductsList() {
         store.save('products', productsData);
     },
