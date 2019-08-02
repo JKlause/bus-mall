@@ -12,7 +12,6 @@ test('create a master list from source list', assert => {
     // act
     const productSet = new ProductSet(productsData);
     
-    // assert
     assert.deepEqual(productSet.list, productsData);
     assert.notEqual(productSet.list, productsData);
 });
