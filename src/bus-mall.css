@@ -1,0 +1,197 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: rgb(105, 101, 101)
+}
+
+header {
+    display: flex;
+    height: 180px;
+    width: 100%;
+    margin-bottom: 30px;
+    background-image: url('../assets/bus.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 30%;
+    border: 5px solid rgb(122, 48, 48);
+}
+
+header h1 {
+    color: rgb(122, 48, 48);
+    padding-top: 20px;
+    padding-left: 10vw;
+    padding-bottom: 0;
+    text-align: left;
+    font-size: 3em;
+}
+
+h2 {
+    color: rgb(187, 9, 9);
+    text-align: center;
+    font-size: 2.1em
+}
+
+h3 {
+    color:  rgb(219, 53, 53);
+    text-align: center;
+    font-size: 1.6em;
+    width: 100%;
+    margin-right: 5px;
+    text-decoration: underline;
+}
+
+header a{
+    margin-left: 10vw;
+    margin-right: 10px;
+    color: rgb(187, 9, 9);
+    font-size: 1.3em;
+    text-align: right;
+    font-weight: bolder;
+    padding-top: 75px;
+    text-decoration: underline;
+
+}
+
+button {
+    border: 3px solid rgb(122, 48, 48);
+    background-color: rgb(243, 113, 113);
+    color: rgb(122, 48, 48);
+    font-size: 1.3em;
+    margin: 3vw;
+    height: 5vh;
+    width: 15vw;
+}
+
+button:hover {
+    transition-duration: 350ms;
+    background-color: rgb(219, 53, 53);
+    border: 3px solid rgb(187, 9, 9);
+    cursor: pointer;
+}
+
+img {
+    object-fit: contain;
+}
+
+img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+input {
+    display: none;
+}
+
+input:checked+img{
+    transition-duration: 50ms;
+    background-color: rgb(219, 53, 53);
+}
+
+table {
+    border: 3px solid  rgb(122, 48, 48);
+    border-collapse: collapse;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+thead {
+    background:rgb(187, 9, 9);
+    color: white;
+}
+
+td, th {
+    border: 2px solid  rgb(122, 48, 48);
+}
+
+tbody {
+    background: white;
+}
+
+table th, table td {
+    text-align: right;
+    padding: 10px;
+}
+
+tbody tr:nth-child(even) {
+    background: rgb(243, 113, 113);
+    color: white;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: center;
+}
+
+.product-title {
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: bolder;
+    color:  rgb(243, 113, 113);
+}
+
+.description {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: rgb(243, 113, 113);
+    border: 2px solid rgb(122, 48, 48);
+    margin: 0 3vw;
+    padding: 1vw;
+    width: 23vw;
+}
+
+.product img {
+    border: 3px solid rgb(122, 48, 48);
+    background-color: rgb(243, 113, 113);
+    margin: 0vw 3vw;
+    height: 50vh;
+    width: 25vw;
+    object-fit: contain;
+}
+
+.hidden {
+    display: none;
+}
+
+.left-justification {
+    text-align: left;
+}
+
+.center-justification {
+    text-align: center;
+}
+
+#results-div h2 {
+    color:  rgb(253, 0, 0);
+    text-align: center;
+    font-size: 3em;
+    width: 100%;
+    margin-right: 5px;
+}
+
+#reset-survey-button {
+    height: 6vh;
+    width: 20vw;
+}
+
+canvas {
+  width: 75vw;
+  height: 500px;
+  background-color: white;
+}
+
+#chart-div {
+    display: flex;
+    width: 80vw;
+    margin-top: 2vw;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: center;
+}

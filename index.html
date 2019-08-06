@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bus Mall</title>
+    <link rel="stylesheet" href="./src/bus-mall.css">
+</head>
+<body>
+    <header>
+        <h1>Bus Mall</h1>
+        <a class="nav" href="index.html">Product Choices</a>
+        <a class ="nav" href="historic-results.html">Historic Results</a>
+    </header>
+    
+    <main>
+        <div id="product-choice-div">
+            <h3>Please Click On The Product You Would Be Most Interested In Purchasing And Click Submit</h3>
+
+            <form id="form" >
+                <div id="product-render-section" class="container"></div>
+                
+                <div class="container">
+                    <button id="submit-button">Submit</button>
+                </div>
+            </form>
+        </div>
+
+        <div id='results-div' class="hidden">
+            <h2>Results</h2>
+            <div class="container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="left-justification">Product Name</th>
+                            <th class="center-justification">Number of Times Viewed</th>
+                            <th class="center-justification">Number of Times Chosen</th>
+                            <th>Percentage of Times Viewed And Clicked</th>
+                        </tr>
+                    </thead>
+                    <tbody id='results-table-body'></tbody>
+                </table>
+            </div>
+            <div id="chart-div">
+                <canvas id="results-chart"></canvas>
+            </div>
+            <div class="container">
+                <button id="reset-survey-button">Reset Survey</button>
+            </div>
+        </div>
+    </main>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.js"></script>
+    <script src="./src/bus-mall.js" type="module"></script>
+</body>
+</html>
